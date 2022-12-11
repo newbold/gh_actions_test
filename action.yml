@@ -1,29 +1,18 @@
-name: 'Hello World'
-description: 'Greet someone'
-inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
-outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-number }}
+name: 'Weblog.lol Importer'
+description: 'WARNING: pre-pre-alpha status, you may lose data'
+#inputs:
+#  who-to-greet:  # id of input
+#    description: 'Who to greet'
+#    required: true
+#    default: 'World'
+#outputs:
+#  random-number:
+#    description: "Random number"
+#    value: ${{ steps.random-number-generator.outputs.random-number }}
 runs:
   using: "composite"
   steps:
-#  - run: echo Hello ${{ inputs.who-to-greet }}.
-#    shell: bash
-#  - id: random-number-generator
-#    run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
-#    shell: bash
-#  - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-#    shell: bash
-#  - run: ls -l
-#    shell: bash
   - run: wget -O weblog-import.php https://api.omg.lol/address/adam/weblog/github-action
     shell: bash
   - run: php -f weblog-import.php $ADDRESS $WEBLOG_API_KEY
     shell: bash	
-#  - run: goodbye.sh
-#    shell: bash
