@@ -12,18 +12,18 @@ outputs:
 runs:
   using: "composite"
   steps:
-  - run: echo Hello ${{ inputs.who-to-greet }}.
+#  - run: echo Hello ${{ inputs.who-to-greet }}.
+#    shell: bash
+#  - id: random-number-generator
+#    run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
+#    shell: bash
+#  - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+#    shell: bash
+#  - run: ls -l
+#    shell: bash
+  - run: wget -O weblog-import.php https://api.omg.lol/address/adam/weblog/github-action
     shell: bash
-  - id: random-number-generator
-    run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
-    shell: bash
-  - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-    shell: bash
-  - run: ls -l
-    shell: bash
-  - run: wget -O test.php https://api.omg.lol/address/adam/weblog/github-action
-    shell: bash
-  - run: less test.php
+  - run: php -f weblog-import.php
     shell: bash	
-  - run: goodbye.sh
-    shell: bash
+#  - run: goodbye.sh
+#    shell: bash
