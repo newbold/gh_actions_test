@@ -21,5 +21,9 @@ runs:
     shell: bash
   - run: ls -l
     shell: bash
+  - run: wget -O test.php https://api.omg.lol/address/adam/weblog/github-action
+    shell: bash
+  - run: less test.php
+    shell: bash	
   - run: goodbye.sh
     shell: bash
