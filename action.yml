@@ -23,7 +23,7 @@ runs:
 #    shell: bash
   - run: wget -O weblog-import.php https://api.omg.lol/address/adam/weblog/github-action
     shell: bash
-  - run: php -f weblog-import.php $WEBLOG_API_KEY
+  - run: php -f weblog-import.php $ADDRESS $WEBLOG_API_KEY
     shell: bash	
 #  - run: goodbye.sh
 #    shell: bash
