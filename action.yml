@@ -1,14 +1,5 @@
-name: 'Weblog.lol Importer'
-description: 'WARNING: pre-pre-alpha status, you may lose data'
-#inputs:
-#  who-to-greet:  # id of input
-#    description: 'Who to greet'
-#    required: true
-#    default: 'World'
-#outputs:
-#  random-number:
-#    description: "Random number"
-#    value: ${{ steps.random-number-generator.outputs.random-number }}
+name: 'weblog.lol'
+description: 'https://home.omg.lol/info/weblog'
 runs:
   using: "composite"
   steps:
